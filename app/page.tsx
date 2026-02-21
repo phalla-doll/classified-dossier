@@ -1,7 +1,12 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import { ShieldAlert, Fingerprint, Activity, Crosshair, Terminal } from 'lucide-react';
 
 export default function Page() {
+  const [showAliases, setShowAliases] = useState(false);
+
   return (
     <div className="min-h-screen bg-black text-white p-4 md:p-8 font-mono uppercase selection:bg-white selection:text-black">
       <div className="max-w-6xl mx-auto border border-white/20 relative p-1">
@@ -84,7 +89,22 @@ export default function Page() {
             <div>
               <h2 className="text-xs text-white/50 mb-1 border-b border-white/20 pb-1">SUBJECT IDENTIFICATION</h2>
               <div className="text-3xl font-bold tracking-tight mb-1">UNKNOWN / "SILHOUETTE"</div>
-              <p className="text-sm text-white/70">LAST KNOWN ALIAS: VICTOR REZNOV</p>
+              <div className="flex items-center gap-2">
+                <p className="text-sm text-white/70">LAST KNOWN ALIAS: VICTOR REZNOV</p>
+                <button 
+                  onClick={() => setShowAliases(!showAliases)}
+                  className="text-[10px] bg-white/10 hover:bg-white/20 px-2 py-0.5 border border-white/20 transition-colors cursor-pointer"
+                >
+                  {showAliases ? 'HIDE' : 'EXPAND'}
+                </button>
+              </div>
+              {showAliases && (
+                <div className="mt-2 text-xs text-white/50 border-l-2 border-white/20 pl-2 animate-in fade-in slide-in-from-top-1">
+                  <p>AKA: "THE GHOST OF KIEV"</p>
+                  <p>AKA: "AGENT 47" (UNCONFIRMED)</p>
+                  <p>AKA: "JOHN DOE" (INTERPOL)</p>
+                </div>
+              )}
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -96,9 +116,16 @@ export default function Page() {
                 <h3 className="text-[10px] text-white/50 mb-1">ORIGIN</h3>
                 <p className="text-sm">REDACTED</p>
               </div>
-              <div>
+              <div className="relative group cursor-help">
                 <h3 className="text-[10px] text-white/50 mb-1">KNOWN LANGUAGES</h3>
-                <p className="text-sm">EN, RU, ZH, AR</p>
+                <p className="text-sm border-b border-dashed border-white/30 inline-block">EN, RU, ZH, AR</p>
+                
+                <div className="absolute left-0 bottom-full mb-2 hidden group-hover:block w-48 bg-black border border-white/20 p-2 text-xs z-50 shadow-lg">
+                  <div className="flex justify-between mb-1"><span className="text-white/50">EN:</span><span className="text-white">FLUENT (NATIVE)</span></div>
+                  <div className="flex justify-between mb-1"><span className="text-white/50">RU:</span><span className="text-white">FLUENT</span></div>
+                  <div className="flex justify-between mb-1"><span className="text-white/50">ZH:</span><span className="text-white">CONVERSATIONAL</span></div>
+                  <div className="flex justify-between"><span className="text-white/50">AR:</span><span className="text-white">BASIC</span></div>
+                </div>
               </div>
               <div>
                 <h3 className="text-[10px] text-white/50 mb-1">SPECIALTIES</h3>
