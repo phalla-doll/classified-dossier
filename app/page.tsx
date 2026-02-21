@@ -116,15 +116,44 @@ export default function Page() {
                 <h3 className="text-[10px] text-white/50 mb-1">ORIGIN</h3>
                 <p className="text-sm">REDACTED</p>
               </div>
-              <div className="relative group cursor-help">
+              <div>
                 <h3 className="text-[10px] text-white/50 mb-1">KNOWN LANGUAGES</h3>
-                <p className="text-sm border-b border-dashed border-white/30 inline-block">EN, RU, ZH, AR</p>
-                
-                <div className="absolute left-0 bottom-full mb-2 hidden group-hover:block w-48 bg-black border border-white/20 p-2 text-xs z-50 shadow-lg">
-                  <div className="flex justify-between mb-1"><span className="text-white/50">EN:</span><span className="text-white">FLUENT (NATIVE)</span></div>
-                  <div className="flex justify-between mb-1"><span className="text-white/50">RU:</span><span className="text-white">FLUENT</span></div>
-                  <div className="flex justify-between mb-1"><span className="text-white/50">ZH:</span><span className="text-white">CONVERSATIONAL</span></div>
-                  <div className="flex justify-between"><span className="text-white/50">AR:</span><span className="text-white">BASIC</span></div>
+                <div className="flex gap-1 text-sm">
+                  <div className="relative group cursor-help">
+                    <span className="border-b border-dashed border-white/30">EN</span>
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block w-48 bg-black border border-white/20 p-2 text-xs z-50 shadow-lg">
+                      <div className="text-white font-bold mb-1 border-b border-white/20 pb-1">ENGLISH</div>
+                      <div className="flex justify-between mb-1"><span className="text-white/50">LEVEL:</span><span className="text-white">NATIVE</span></div>
+                      <div className="flex justify-between"><span className="text-white/50">SOURCE:</span><span className="text-white">BIRTH RECORD</span></div>
+                    </div>
+                  </div>
+                  <span className="text-white/50">,</span>
+                  <div className="relative group cursor-help">
+                    <span className="border-b border-dashed border-white/30">RU</span>
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block w-48 bg-black border border-white/20 p-2 text-xs z-50 shadow-lg">
+                      <div className="text-white font-bold mb-1 border-b border-white/20 pb-1">RUSSIAN</div>
+                      <div className="flex justify-between mb-1"><span className="text-white/50">LEVEL:</span><span className="text-white">FLUENT</span></div>
+                      <div className="flex justify-between"><span className="text-white/50">SOURCE:</span><span className="text-white">INTERCEPT 89A</span></div>
+                    </div>
+                  </div>
+                  <span className="text-white/50">,</span>
+                  <div className="relative group cursor-help">
+                    <span className="border-b border-dashed border-white/30">ZH</span>
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block w-48 bg-black border border-white/20 p-2 text-xs z-50 shadow-lg">
+                      <div className="text-white font-bold mb-1 border-b border-white/20 pb-1">MANDARIN</div>
+                      <div className="flex justify-between mb-1"><span className="text-white/50">LEVEL:</span><span className="text-white">CONVERSATIONAL</span></div>
+                      <div className="flex justify-between"><span className="text-white/50">SOURCE:</span><span className="text-white">FIELD AGENT T-4</span></div>
+                    </div>
+                  </div>
+                  <span className="text-white/50">,</span>
+                  <div className="relative group cursor-help">
+                    <span className="border-b border-dashed border-white/30">AR</span>
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block w-48 bg-black border border-white/20 p-2 text-xs z-50 shadow-lg">
+                      <div className="text-white font-bold mb-1 border-b border-white/20 pb-1">ARABIC</div>
+                      <div className="flex justify-between mb-1"><span className="text-white/50">LEVEL:</span><span className="text-white">BASIC</span></div>
+                      <div className="flex justify-between"><span className="text-white/50">SOURCE:</span><span className="text-white">SURVEILLANCE</span></div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div>
